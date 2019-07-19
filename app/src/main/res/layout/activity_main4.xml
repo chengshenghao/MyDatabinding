@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--alt + enter 自动生成databindind所需要的布局-->
+    <data>
+
+        <import type="com.tcsl.myapplication.bean.ObservableGoods" />
+
+        <variable
+            name="goods"
+            type="ObservableGoods" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{goods.name}"
+            app:layout_constraintHorizontal_bias="0.18"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="姓名" />
+        <!--双向绑定的意思即为当数据改变时同时使视图刷新，而视图改变时也可以同时改变数据
+        看以下例子，当 EditText 的输入内容改变时，会同时同步到变量 goods,绑定变量的方
+        式比单向绑定多了一个等号：android:text="@={goods.name}"-->
+        <EditText
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@={goods.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.166"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
