@@ -17,4 +17,5 @@ public class MainActivity extends AppCompatActivity {
         User user = new User("liyang", "123");
         viewDataBinding.setUserInfo(user);
     }
+
 }
